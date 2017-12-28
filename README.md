@@ -72,7 +72,7 @@ export class SampleComponent implements OnInit {
 
   ngOnInit() {
     this.carouselOne = {
-      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+      grid: {xs: 1, sm: 1, md: 1, lg: 1, xl: 1, all: 0},
       slide: 1,
       speed: 400,
       interval: 4000,
@@ -126,7 +126,7 @@ export class NgxCarouselStore {
   isLast: boolean;
   breakpoints: DeviceBreakPoint;
 }
-export type DeviceType = 'xs' | 'sm' | 'md' | 'lg' | 'all';
+export type DeviceType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'all';
 
 export class ItemsControl {
   start: number;
@@ -160,6 +160,7 @@ export class Grid {
   sm: number;
   md: number;
   lg: number;
+  xl: number;
   all: number;
 }
 
@@ -175,13 +176,14 @@ export interface DeviceBreakPoint {
   sm: number;
   md: number;
   lg: number;
+  xl: number;
 }
 
 ```
 
 | Command | Type | Required | Description |
 | --- | --- | --- | --- |
-| `grid` | Object | Yes | **xs** - mobile, **sm** - tablet, **md** - desktop, **lg** - large desktops, **all** - fixed width (When you use **all** make others 0 and vise versa) |
+| `grid` | Object | Yes | **xs** - mobile, **sm** - tablet, **md** - desktop, **lg** - large desktops, **xl** - extra large desktops **all** - fixed width (When you use **all** make others 0 and vise versa) |
 | `slide` | number | optional | It is used to slide the number items on click |
 | `speed` | milli seconds | optional | It is used for time taken to slide the number items |
 | `interval` | milli seconds | optional | It is used to make carousel auto slide with given value. interval defines the interval between slides |
@@ -192,8 +194,8 @@ export interface DeviceBreakPoint {
 | `easing` | string | optional | It is used to define the easing style of the carousel. Only define the ease name without any timing like `ease`,`ease-in` |
 | `loop` | boolean | optional | It is used to loop the `ngx-item | ngx-tile`. It must be true for `interval` |
 | `animation` | string | optional | It is used to animate the sliding items. currently it only supports `lazy`. more coming soon and also with custom css animation option |
-| `custom` | string | optional | It is you to define the purpose of the carousel. currently it only supports `banner`. more coming soon and also with custom css animation option 
-| `breakpoints` | Object | optional | It is used to provide customizable break points for small/medium/large devices |
+| `custom` | string | optional | It is you to define the purpose of the carousel. currently it only supports `banner`. more coming soon and also with custom css animation option |
+| `breakpoints` | Object | optional | It is used to provide customizable break points for extra small/small/medium/large/extra large devices |
 
 ### Custom css for Point
 
@@ -294,7 +296,7 @@ export class Sample implements OnInit {
   ngOnInit(){
 
     this.carouselBanner = {
-      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+      grid: {xs: 1, sm: 1, md: 1, lg: 1, xl: 1, all: 0},
       slide: 1,
       speed: 400,
       interval: 4000,
@@ -411,7 +413,7 @@ export class Sample implements OnInit {
     this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
     this.carouselTile = {
-      grid: {xs: 2, sm: 3, md: 3, lg: 5, all: 0},
+      grid: {xs: 2, sm: 3, md: 3, lg: 5, xl: 6, all: 0},
       slide: 2,
       speed: 400,
       animation: 'lazy',
@@ -505,7 +507,7 @@ export class Sample implements OnInit {
     this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
     this.carouselTile = {
-      grid: {xs: 2, sm: 3, md: 3, lg: 5, all: 0},
+      grid: {xs: 2, sm: 3, md: 3, lg: 5, xl: 6, all: 0},
       slide: 2,
       speed: 400,
       animation: 'lazy',
