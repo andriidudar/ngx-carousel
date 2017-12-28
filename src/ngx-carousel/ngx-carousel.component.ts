@@ -25,7 +25,7 @@ import {
 } from '@angular/core';
 
 import { NgxCarousel, NgxCarouselStore } from './ngx-carousel.interface';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Rx';
 import * as Hammer from 'hammerjs'
 
 @Component({
@@ -160,7 +160,7 @@ export class NgxCarouselComponent
     currentSlide: 0,
     easing: 'cubic-bezier(0, 0, 0.2, 1)',
     speed: 400,
-    transform: { xs: 0, sm: 0, md: 0, lg: 0, all: 0 },
+    transform: { xs: 0, sm: 0, md: 0, lg: 0, xl: 0, all: 0 },
     loop: false,
     dexVal: 0,
     touchTransform: 0,
@@ -171,7 +171,8 @@ export class NgxCarouselComponent
     breakpoints: {
       sm: 768,
       md: 992,
-      lg: 1200
+      lg: 1200,
+      xl: 1600
     }
   };
 
@@ -212,7 +213,7 @@ export class NgxCarouselComponent
     this.buttonControl();
     this.touch();
 
-    this.itemsSubscribe = this.items.changes.subscribe(val => {
+    this.itemsSubscribe = <any>this.items.changes.subscribe(val => {
       this.data.isLast = false;
       this.carouselPoint();
       this.buttonControl();
@@ -271,11 +272,13 @@ export class NgxCarouselComponent
 
     if (this.data.type === 'responsive') {
       this.data.deviceType =
-        this.data.deviceWidth >= this.data.breakpoints.lg
-          ? 'lg'
-          : this.data.deviceWidth >= this.data.breakpoints.md
-            ? 'md'
-            : this.data.deviceWidth >= this.data.breakpoints.sm ? 'sm' : 'xs';
+        this.data.deviceWidth >= this.data.breakpoints.xl
+          ? 'xl'
+          : this.data.deviceWidth >= this.data.breakpoints.lg
+            ? 'lg'
+            : this.data.deviceWidth >= this.data.breakpoints.md
+              ? 'md'
+              : this.data.deviceWidth >= this.data.breakpoints.sm ? 'sm' : 'xs';
 
       this.data.items = this.userData.grid[this.data.deviceType];
       this.data.itemWidth = this.data.carouselWidth / this.data.items;
@@ -472,11 +475,14 @@ export class NgxCarouselComponent
         styleid + ' .item {width: ' + 100 / this.userData.grid.md + '%}';
       const itemWidth_lg =
         styleid + ' .item {width: ' + 100 / this.userData.grid.lg + '%}';
+      const itemWidth_xl =
+        styleid + ' .item {width: ' + 100 / this.userData.grid.xl + '%}';
 
       itemStyle = `@media (max-width:${this.data.breakpoints.sm - 1}px){${itemWidth_xs}}
                     @media (min-width:${this.data.breakpoints.sm}px){${itemWidth_sm}}
                     @media (min-width:${this.data.breakpoints.md}px){${itemWidth_md}}
-                    @media (min-width:${this.data.breakpoints.lg}px){${itemWidth_lg}}`;
+                    @media (min-width:${this.data.breakpoints.lg}px){${itemWidth_lg}}
+                    @media (min-width:${this.data.breakpoints.xl}px){${itemWidth_xl}}`;
     } else {
       itemStyle = `${styleid} .item {width: ${this.userData.grid.all}px}`;
     }
@@ -619,7 +625,8 @@ export class NgxCarouselComponent
       this.data.transform.sm = 100 / this.userData.grid.sm * slide;
       this.data.transform.md = 100 / this.userData.grid.md * slide;
       this.data.transform.lg = 100 / this.userData.grid.lg * slide;
-      slideCss = `@media (max-width: 767px) {
+      this.data.transform.xl = 100 / this.userData.grid.xl * slide;
+      slideCss = `@media (max-width: ${this.data.breakpoints.sm - 1}px) {
               .${this.data
                 .classText} > .ngxcarousel > .ngxcarousel-inner > .ngxcarousel-items { transform: translate3d(-${this
         .data.transform.xs}%, 0, 0); } }
@@ -634,7 +641,11 @@ export class NgxCarouselComponent
             @media (min-width: ${this.data.breakpoints.lg}px) {
               .${this.data
                 .classText} > .ngxcarousel > .ngxcarousel-inner > .ngxcarousel-items { transform: translate3d(-${this
-        .data.transform.lg}%, 0, 0); } }`;
+        .data.transform.lg}%, 0, 0); } }
+            @media (min-width: ${this.data.breakpoints.xl}px) {
+              .${this.data
+                .classText} > .ngxcarousel > .ngxcarousel-inner > .ngxcarousel-items { transform: translate3d(-${this
+        .data.transform.xl}%, 0, 0); } }`;
     } else {
       this.data.transform.all = this.userData.grid.all * slide;
       slideCss = `.${this.data

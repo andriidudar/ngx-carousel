@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     ];
 
     this.carouselBanner = {
-      grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
+      grid: { xs: 1, sm: 1, md: 1, lg: 1, xl: 1, all: 0 },
       slide: 4,
       speed: 500,
       interval: 5000,
@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
     };
 
     this.carouselTile = {
-      grid: { xs: 2, sm: 3, md: 3, lg: 4, all: 0 },
+      grid: { xs: 2, sm: 3, md: 3, lg: 4, xl: 5, all: 0 },
       speed: 600,
       interval: 3000,
       point: {
@@ -115,7 +115,7 @@ export class AppComponent implements OnInit {
     };
 
     this.carouselTileOne = {
-      grid: { xs: 2, sm: 3, md: 4, lg: 6, all: 0 },
+      grid: { xs: 2, sm: 3, md: 4, lg: 6, xl: 7, all: 0 },
       speed: 600,
       interval: 3000,
       point: {
@@ -153,7 +153,7 @@ export class AppComponent implements OnInit {
     };
 
     this.carouselTileTwo = {
-      grid: { xs: 1, sm: 3, md: 4, lg: 6, all: 230 },
+      grid: { xs: 1, sm: 3, md: 4, lg: 6, lg: 7, all: 230 },
       speed: 600,
       interval: 3000,
       point: {

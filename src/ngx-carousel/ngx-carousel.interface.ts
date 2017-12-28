@@ -24,7 +24,7 @@ export class NgxCarouselStore {
   isLast: boolean;
   breakpoints: DeviceBreakPoint;
 }
-export type DeviceType = 'xs' | 'sm' | 'md' | 'lg' | 'all';
+export type DeviceType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'all';
 
 export class ItemsControl {
   start: number;
@@ -42,6 +42,7 @@ export class Transfrom {
   sm: number;
   md: number;
   lg: number;
+  xl: number;
   all: number;
 }
 
@@ -75,4 +76,5 @@ export interface DeviceBreakPoint {
   sm: number;
   md: number;
   lg: number;
+  xl: number;
 }
