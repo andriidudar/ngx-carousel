@@ -13,8 +13,6 @@ var NgxCarouselItemDirective = /** @class */ (function () {
                     selector: '[NgxCarouselItem]'
                 },] },
     ];
-    /** @nocollapse */
-    NgxCarouselItemDirective.ctorParameters = function () { return []; };
     return NgxCarouselItemDirective;
 }());
 var NgxCarouselNextDirective = /** @class */ (function () {
@@ -26,8 +24,6 @@ var NgxCarouselNextDirective = /** @class */ (function () {
                     selector: '[NgxCarouselNext]'
                 },] },
     ];
-    /** @nocollapse */
-    NgxCarouselNextDirective.ctorParameters = function () { return []; };
     return NgxCarouselNextDirective;
 }());
 var NgxCarouselPrevDirective = /** @class */ (function () {
@@ -39,8 +35,6 @@ var NgxCarouselPrevDirective = /** @class */ (function () {
                     selector: '[NgxCarouselPrev]'
                 },] },
     ];
-    /** @nocollapse */
-    NgxCarouselPrevDirective.ctorParameters = function () { return []; };
     return NgxCarouselPrevDirective;
 }());
 
@@ -597,25 +591,25 @@ var NgxCarouselComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     NgxCarouselComponent.ctorParameters = function () { return [
-        { type: _angular_core.ElementRef, },
-        { type: _angular_core.Renderer, },
+        { type: _angular_core.ElementRef },
+        { type: _angular_core.Renderer }
     ]; };
     NgxCarouselComponent.propDecorators = {
-        'userData': [{ type: _angular_core.Input, args: ['inputs',] },],
-        'moveToSlide': [{ type: _angular_core.Input, args: ['moveToSlide',] },],
-        'carouselLoad': [{ type: _angular_core.Output, args: ['carouselLoad',] },],
-        'onMove': [{ type: _angular_core.Output, args: ['onMove',] },],
-        'afterCarouselViewed': [{ type: _angular_core.Output, args: ['afterCarouselViewed',] },],
-        'items': [{ type: _angular_core.ContentChildren, args: [NgxCarouselItemDirective,] },],
-        'points': [{ type: _angular_core.ViewChildren, args: ['pointInner', { read: _angular_core.ElementRef },] },],
-        'next': [{ type: _angular_core.ContentChild, args: [NgxCarouselNextDirective, { read: _angular_core.ElementRef },] },],
-        'prev': [{ type: _angular_core.ContentChild, args: [NgxCarouselPrevDirective, { read: _angular_core.ElementRef },] },],
-        'carouselMain1': [{ type: _angular_core.ViewChild, args: ['ngxcarousel', { read: _angular_core.ElementRef },] },],
-        'carouselInner1': [{ type: _angular_core.ViewChild, args: ['ngxitems', { read: _angular_core.ElementRef },] },],
-        'carousel1': [{ type: _angular_core.ViewChild, args: ['main', { read: _angular_core.ElementRef },] },],
-        'pointMain': [{ type: _angular_core.ViewChild, args: ['points', { read: _angular_core.ElementRef },] },],
-        'forTouch': [{ type: _angular_core.ViewChild, args: ['forTouch', { read: _angular_core.ElementRef },] },],
-        'onResizing': [{ type: _angular_core.HostListener, args: ['window:resize', ['$event'],] },],
+        userData: [{ type: _angular_core.Input, args: ['inputs',] }],
+        moveToSlide: [{ type: _angular_core.Input, args: ['moveToSlide',] }],
+        carouselLoad: [{ type: _angular_core.Output, args: ['carouselLoad',] }],
+        onMove: [{ type: _angular_core.Output, args: ['onMove',] }],
+        afterCarouselViewed: [{ type: _angular_core.Output, args: ['afterCarouselViewed',] }],
+        items: [{ type: _angular_core.ContentChildren, args: [NgxCarouselItemDirective,] }],
+        points: [{ type: _angular_core.ViewChildren, args: ['pointInner', { read: _angular_core.ElementRef },] }],
+        next: [{ type: _angular_core.ContentChild, args: [NgxCarouselNextDirective, { read: _angular_core.ElementRef },] }],
+        prev: [{ type: _angular_core.ContentChild, args: [NgxCarouselPrevDirective, { read: _angular_core.ElementRef },] }],
+        carouselMain1: [{ type: _angular_core.ViewChild, args: ['ngxcarousel', { read: _angular_core.ElementRef },] }],
+        carouselInner1: [{ type: _angular_core.ViewChild, args: ['ngxitems', { read: _angular_core.ElementRef },] }],
+        carousel1: [{ type: _angular_core.ViewChild, args: ['main', { read: _angular_core.ElementRef },] }],
+        pointMain: [{ type: _angular_core.ViewChild, args: ['points', { read: _angular_core.ElementRef },] }],
+        forTouch: [{ type: _angular_core.ViewChild, args: ['forTouch', { read: _angular_core.ElementRef },] }],
+        onResizing: [{ type: _angular_core.HostListener, args: ['window:resize', ['$event'],] }]
     };
     return NgxCarouselComponent;
 }());
@@ -631,10 +625,8 @@ var NgxItemComponent = /** @class */ (function () {
                     styles: ["\n    :host {\n        display: inline-block;\n        white-space: initial;\n        vertical-align: top;\n    }\n  "]
                 },] },
     ];
-    /** @nocollapse */
-    NgxItemComponent.ctorParameters = function () { return []; };
     NgxItemComponent.propDecorators = {
-        'classes': [{ type: _angular_core.HostBinding, args: ['class',] },],
+        classes: [{ type: _angular_core.HostBinding, args: ['class',] }]
     };
     return NgxItemComponent;
 }());
@@ -650,10 +642,8 @@ var NgxTileComponent = /** @class */ (function () {
                     styles: ["\n    :host {\n        display: inline-block;\n        white-space: initial;\n        padding: 10px;\n        box-sizing: border-box;\n        vertical-align: top;\n    }\n\n    .tile {\n        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n    }\n\n    * {\n        box-sizing: border-box;\n    }\n  "]
                 },] },
     ];
-    /** @nocollapse */
-    NgxTileComponent.ctorParameters = function () { return []; };
     NgxTileComponent.propDecorators = {
-        'classes': [{ type: _angular_core.HostBinding, args: ['class',] },],
+        classes: [{ type: _angular_core.HostBinding, args: ['class',] }]
     };
     return NgxTileComponent;
 }());
@@ -707,8 +697,6 @@ var NgxCarouselModule = /** @class */ (function () {
                     ],
                 },] },
     ];
-    /** @nocollapse */
-    NgxCarouselModule.ctorParameters = function () { return []; };
     return NgxCarouselModule;
 }());
 

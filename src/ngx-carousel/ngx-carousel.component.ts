@@ -25,7 +25,7 @@ import {
 } from '@angular/core';
 
 import { NgxCarousel, NgxCarouselStore } from './ngx-carousel.interface';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs';
 import * as Hammer from 'hammerjs'
 
 @Component({

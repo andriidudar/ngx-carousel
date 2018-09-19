@@ -1,9 +1,9 @@
 # Node generated files
 node_modules
 npm-debug.log
-dist
 *.ngfactory.ts
 *.ngsummary.json
+dist
 
 # OS generated files
 Thumbs.db

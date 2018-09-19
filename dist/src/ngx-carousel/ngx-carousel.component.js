@@ -1,5 +1,5 @@
 import { NgxCarouselItemDirective, NgxCarouselNextDirective, NgxCarouselPrevDirective } from './ngx-carousel.directive';
-import { Component, ElementRef, Renderer, Input, Output, HostListener, EventEmitter, ContentChildren, ViewChild, ViewChildren, ContentChild } from '@angular/core';
+import { Component, ElementRef, Renderer, Input, Output, HostListener, EventEmitter, ContentChildren, QueryList, ViewChild, ViewChildren, ContentChild } from '@angular/core';
 import * as Hammer from 'hammerjs';
 var NgxCarouselComponent = /** @class */ (function () {
     function NgxCarouselComponent(el, renderer) {
@@ -554,25 +554,25 @@ var NgxCarouselComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     NgxCarouselComponent.ctorParameters = function () { return [
-        { type: ElementRef, },
-        { type: Renderer, },
+        { type: ElementRef },
+        { type: Renderer }
     ]; };
     NgxCarouselComponent.propDecorators = {
-        'userData': [{ type: Input, args: ['inputs',] },],
-        'moveToSlide': [{ type: Input, args: ['moveToSlide',] },],
-        'carouselLoad': [{ type: Output, args: ['carouselLoad',] },],
-        'onMove': [{ type: Output, args: ['onMove',] },],
-        'afterCarouselViewed': [{ type: Output, args: ['afterCarouselViewed',] },],
-        'items': [{ type: ContentChildren, args: [NgxCarouselItemDirective,] },],
-        'points': [{ type: ViewChildren, args: ['pointInner', { read: ElementRef },] },],
-        'next': [{ type: ContentChild, args: [NgxCarouselNextDirective, { read: ElementRef },] },],
-        'prev': [{ type: ContentChild, args: [NgxCarouselPrevDirective, { read: ElementRef },] },],
-        'carouselMain1': [{ type: ViewChild, args: ['ngxcarousel', { read: ElementRef },] },],
-        'carouselInner1': [{ type: ViewChild, args: ['ngxitems', { read: ElementRef },] },],
-        'carousel1': [{ type: ViewChild, args: ['main', { read: ElementRef },] },],
-        'pointMain': [{ type: ViewChild, args: ['points', { read: ElementRef },] },],
-        'forTouch': [{ type: ViewChild, args: ['forTouch', { read: ElementRef },] },],
-        'onResizing': [{ type: HostListener, args: ['window:resize', ['$event'],] },],
+        userData: [{ type: Input, args: ['inputs',] }],
+        moveToSlide: [{ type: Input, args: ['moveToSlide',] }],
+        carouselLoad: [{ type: Output, args: ['carouselLoad',] }],
+        onMove: [{ type: Output, args: ['onMove',] }],
+        afterCarouselViewed: [{ type: Output, args: ['afterCarouselViewed',] }],
+        items: [{ type: ContentChildren, args: [NgxCarouselItemDirective,] }],
+        points: [{ type: ViewChildren, args: ['pointInner', { read: ElementRef },] }],
+        next: [{ type: ContentChild, args: [NgxCarouselNextDirective, { read: ElementRef },] }],
+        prev: [{ type: ContentChild, args: [NgxCarouselPrevDirective, { read: ElementRef },] }],
+        carouselMain1: [{ type: ViewChild, args: ['ngxcarousel', { read: ElementRef },] }],
+        carouselInner1: [{ type: ViewChild, args: ['ngxitems', { read: ElementRef },] }],
+        carousel1: [{ type: ViewChild, args: ['main', { read: ElementRef },] }],
+        pointMain: [{ type: ViewChild, args: ['points', { read: ElementRef },] }],
+        forTouch: [{ type: ViewChild, args: ['forTouch', { read: ElementRef },] }],
+        onResizing: [{ type: HostListener, args: ['window:resize', ['$event'],] }]
     };
     return NgxCarouselComponent;
 }());
